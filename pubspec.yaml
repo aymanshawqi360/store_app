@@ -57,6 +57,12 @@ dependencies:
   flutter_bloc: ^9.0.0
   # Customizable animated page 
   smooth_page_indicator: ^1.2.0+3
+  # A simple slide-to-action widget for Flutter
+  slide_to_act: ^2.0.2
+  # An SVG rendering and widget library for Flutter, which allows painting 
+  flutter_svg: ^2.0.16
+  # A carousel slider widget, support infinite scroll and custom child widget.
+  carousel_slider_plus: ^7.1.0
 
 dev_dependencies:
   flutter_test:

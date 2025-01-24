@@ -17,7 +17,7 @@ class SorteApp extends StatelessWidget {
         designSize: const Size(360, 690),
         minTextAdapt: true,
         child: MaterialApp(
-          theme: ThemeData(scaffoldBackgroundColor: ColorManager.lightGray),
+          theme: ThemeData(scaffoldBackgroundColor: Color(0xffF2F3F7)),
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.onboardingScreen,
           onGenerateRoute: appRouter.generateRoute,
