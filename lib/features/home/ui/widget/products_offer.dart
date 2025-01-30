@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:store_app/core/widget/images_list.dart';
 
-import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 
@@ -19,8 +18,7 @@ class ProductsOffer extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           image: DecorationImage(
-            image:
-                AssetImage("${ImagesList.productsOfferList[index].toString()}"),
+            image: AssetImage("${ImagesList.productsOfferList[index]}"),
             alignment: Alignment.centerLeft,
           ),
           gradient: const LinearGradient(
@@ -36,22 +34,27 @@ class ProductsOffer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 65.w),
+            padding: EdgeInsets.only(
+              left: 60.w,
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Majority's best\nchoice",
                     style: TextStyles.font10BlackSemiBold
                         .copyWith(fontSize: 16.sp)),
                 Padding(
-                  padding: EdgeInsets.only(right: 11.w),
+                  padding: EdgeInsets.only(right: 18.w),
                   child: Text("Look attractive",
                       style: TextStyles.font14SlateGrayLight),
                 ),
-                verticalSpace(height: 5),
+                SizedBox(
+                  height: 5.h,
+                ),
                 Container(
-                  height: 23.h,
-                  width: 85.w,
+                  height: 27.h,
+                  width: 80.w,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12)),
@@ -65,7 +68,7 @@ class ProductsOffer extends StatelessWidget {
                       ),
                       SvgPicture.asset(
                         // width: 100,
-                        "assets/svg/chm.svg", height: 13,
+                        "assets/svgs/chm.svg", height: 13,
                       )
                     ],
                   )),

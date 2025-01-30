@@ -5,18 +5,18 @@ import 'package:store_app/core/widget/images_list.dart';
 import 'package:store_app/features/home/ui/widget/products_offer.dart';
 
 class ImageCarouselSlider extends StatelessWidget {
-  ImageCarouselSlider({
+  const ImageCarouselSlider({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 0.h),
+      padding: EdgeInsets.symmetric(vertical: 5.h),
       child: CarouselSlider.builder(
         itemCount: ImagesList.productsOfferList.length,
         options: CarouselOptions(
-            height: 115.h,
+            height: 132.h,
             autoPlay: true,
             enlargeCenterPage: true,
             enlargeStrategy: CenterPageEnlargeStrategy.height),

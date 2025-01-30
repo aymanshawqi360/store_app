@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:store_app/core/theming/colors.dart';
 
 class OrderingAppCategoriesList extends StatelessWidget {
@@ -14,7 +13,6 @@ class OrderingAppCategoriesList extends StatelessWidget {
       height: 80.h,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          // shrinkWrap: true,
           itemCount: 9,
           itemBuilder: (context, imdex) {
             return Container(
@@ -22,11 +20,8 @@ class OrderingAppCategoriesList extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    height: 42.h,
-                    width: 50.w,
-                    child: SvgPicture.asset(
-                      "assets/svg/shirt.svg",
-                    ),
+                    height: 54.h,
+                    width: 54.w,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
                         border:

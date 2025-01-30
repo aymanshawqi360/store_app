@@ -4,23 +4,23 @@ import 'package:flutter_svg/svg.dart';
 class StarsLis {
   static List<Widget> start = [
     SvgPicture.asset(
-      "assets/svg/Vector.svg",
+      "assets/svgs/star.svg",
       width: 16,
     ),
     SvgPicture.asset(
-      "assets/svg/Vector.svg",
+      "assets/svgs/star.svg",
       width: 16,
     ),
     SvgPicture.asset(
-      "assets/svg/Vector.svg",
+      "assets/svgs/star.svg",
       width: 16,
     ),
     SvgPicture.asset(
-      "assets/svg/Vector.svg",
+      "assets/svgs/star.svg",
       width: 16,
     ),
     SvgPicture.asset(
-      "assets/svg/Vector.svg",
+      "assets/svgs/star.svg",
       width: 16,
     ),
   ];

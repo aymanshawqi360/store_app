@@ -15,47 +15,42 @@ class OrderingAppImageAndTextBestOfThisMonths extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Image.asset(
-            "${image}",
-            fit: BoxFit.cover,
-            width: double.infinity,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 54.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  textAlign: TextAlign.center,
-                  "Best of this months\nCollection",
-                  style: TextStyles.font30WhiteSemiBold.copyWith(
-                    height: 1.1,
-                  ),
+    return Stack(
+      children: [
+        Image.asset(
+          "${image}",
+          fit: BoxFit.cover,
+          width: double.infinity,
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 54.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                textAlign: TextAlign.center,
+                "Best of this months\nCollection",
+                style: TextStyles.font30WhiteSemiBold.copyWith(
+                  height: 1.1,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          // Positioned(
-          //     // bottom: 0,
-          //     child: ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 15.h, right: 10.w, left: 10.w),
-            child: SlideAction(
-              height: 50.h,
-              sliderButtonIconSize: 18,
-              outerColor: ColorManager.royalBlue,
-              alignment: Alignment.bottomCenter,
-              borderRadius: 9,
-              elevation: 5,
-              onSubmit: () => context.pushNamed(Routes.homeScreen),
-              text: "Go to Home",
-            ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 13.w),
+          child: SlideAction(
+            height: 65,
+            sliderButtonIconSize: 20,
+            outerColor: ColorManager.royalBlue,
+            alignment: Alignment.bottomCenter,
+            borderRadius: 9,
+            elevation: 5,
+            onSubmit: () => context.pushNamed(Routes.homeScreen),
+            text: "Go to Home",
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
