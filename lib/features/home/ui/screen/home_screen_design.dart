@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:store_app/core/helpers/spacing.dart';
-import 'package:store_app/core/widget/stars_lis.dart';
 import '../../../../core/theming/styles.dart';
 import '../widget/home_to_bar.dart';
 import '../widget/image_carouselslider.dart';
@@ -10,7 +8,7 @@ import '../widget/ordering_app_categories_gridview.dart';
 import '../widget/ordering_app_categories_list.dart';
 
 class HomeScreenDesign extends StatelessWidget {
-  HomeScreenDesign({super.key});
+  const HomeScreenDesign({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +18,16 @@ class HomeScreenDesign extends StatelessWidget {
           Column(
             children: [
               const HomeToBar(),
-              verticalSpace(height: 75),
+              verticalSpace(110),
               const OrderingAppCategoriesList(),
+              verticalSpace(30),
               _textProductsAndViewAll(),
-              verticalSpace(height: 0),
-              OrderingAppCategoriesGridView(start: StarsLis.start)
+              const OrderingAppCategoriesGridView()
             ],
           ),
           Padding(
             padding: EdgeInsets.only(top: 100.h),
-            child: ImageCarouselSlider(),
+            child: const ImageCarouselSlider(),
           ),
         ],
       ),
