@@ -65,7 +65,8 @@ dependencies:
   flutter_svg: ^2.0.16
   # A carousel slider widget, support infinite scroll and custom child widget.
   carousel_slider_plus: ^7.1.0
-  
+  # A package provides an easy way to add shimmer effect in Flutter project
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

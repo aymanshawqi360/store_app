@@ -10,4 +10,5 @@ class ColorManager {
   static const Color lightBlue = Color(0xff97D7FF);
   static const Color softPurple = Color(0xffE1CCFD);
   static const Color slateGray = Color(0xff4B566B);
+  static const Color ghostWhite = Color(0xffF2F3F7);
 }
