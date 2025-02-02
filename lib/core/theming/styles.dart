@@ -44,4 +44,9 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     fontSize: 12.sp,
   );
+  static TextStyle font13ghostWhiteBold = TextStyle(
+    color: ColorManager.ghostWhite,
+    fontWeight: FontWeightHelper.bold,
+    fontSize: 13.sp,
+  );
 }
