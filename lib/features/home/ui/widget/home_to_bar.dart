@@ -44,7 +44,7 @@ class HomeToBar extends StatelessWidget {
                   ),
                   Text(
                     "Ordering App",
-                    style: TextStyles.font20BlackSemiBold
+                    style: TextStyles.font22BlackSemiBold
                         .copyWith(color: ColorManager.white, fontSize: 17.sp),
                   ),
                 ],

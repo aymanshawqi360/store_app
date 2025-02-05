@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/features/home/data/apis/home_api_constants.dart';
-import 'package:store_app/features/home/logic/cubit_all_categories/all_categories_cubit.dart';
-import 'package:store_app/features/home/logic/cubit_all_categories/all_categories_state.dart';
+import 'package:store_app/features/home/logic/cubit/home_cubit.dart';
+import 'package:store_app/features/home/logic/cubit/home_state.dart';
 import 'package:shimmer/shimmer.dart';
-
-import '../ordering_app_categories_list.dart';
+import 'package:store_app/features/home/ui/widget/all_categories_list/ordering_app_all_categories_list.dart';
 
 class AllCategoriesBlocBuilder extends StatelessWidget {
   const AllCategoriesBlocBuilder({
@@ -15,25 +14,28 @@ class AllCategoriesBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AllCategoriesCubit, AllCategoriesState>(
+    return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-          current is AllCategoriesLoading || current is AllCategoriesSuccess,
+          current is AllCategoriesLoading ||
+          current is AllCategoriesSuccess ||
+          current is AllCategoriesError,
       builder: (context, state) {
         return state.maybeWhen(
-            orElse: () => SizedBox.fromSize(),
-            allCategoriesLoading: () {
-              return shimmerAllCategories();
-            },
-            allCategoriesSuccess: (allCategoriesResponse) {
-              return OrderingAppCategoriesList(
-                  listAllCategories: allCategoriesResponse);
-            });
+          allCategoriesLoading: () => _shimmerAllCategories(),
+          allCategoriesSuccess: (allCategoriesResponse) {
+            return OrderingAppAllCategoriesList(
+                listAllCategories: allCategoriesResponse);
+          },
+          allCategoriesError: (errorHandler) =>
+              Text(errorHandler.apiErrorModel.codeError.toString()),
+          orElse: () => SizedBox.fromSize(),
+        );
       },
     );
   }
 }
 
-Widget shimmerAllCategories() {
+Widget _shimmerAllCategories() {
   return SizedBox(
     height: 40.h,
     child: ListView.builder(

@@ -24,6 +24,9 @@ class ApiFactore {
       responseBody: true,
       requestHeader: true,
       responseHeader: true,
+      error: true,
+      requestBody: true,
+      request: true,
     ));
   }
 }

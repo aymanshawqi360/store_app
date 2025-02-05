@@ -4,10 +4,10 @@ import 'package:store_app/core/theming/colors.dart';
 import 'package:store_app/core/theming/font_weight_helper%20.dart';
 
 class TextStyles {
-  static TextStyle font20BlackSemiBold = TextStyle(
+  static TextStyle font22BlackSemiBold = TextStyle(
     color: ColorManager.black,
     fontWeight: FontWeightHelper.semiBold,
-    fontSize: 20.sp,
+    fontSize: 22.sp,
   );
   static TextStyle font35BlackSemiBold = TextStyle(
     color: ColorManager.black,
@@ -29,10 +29,10 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     fontSize: 12.sp,
   );
-  static TextStyle font10BlackSemiBold = TextStyle(
+  static TextStyle font13BlackSemiBold = TextStyle(
     color: ColorManager.black,
     fontWeight: FontWeightHelper.semiBold,
-    fontSize: 10.sp,
+    fontSize: 13.sp,
   );
   static TextStyle font14SlateGrayLight = TextStyle(
     color: ColorManager.slateGray,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/helpers/spacing.dart';
-import 'package:store_app/features/home/ui/widget/home_api_all_categories_bloc_builder/all_categories_bloc_builder.dart';
+import 'package:store_app/features/home/ui/widget/all_categories_list/all_categories_bloc_builder.dart';
 import '../../../../core/theming/styles.dart';
+import '../widget/category_grid_view/category_bloc_builder.dart';
 import '../widget/home_to_bar.dart';
 import '../widget/image_carouselslider.dart';
-import '../widget/ordering_app_categories_gridview.dart';
 
 class HomeScreenDesign extends StatelessWidget {
   const HomeScreenDesign({
@@ -24,7 +24,7 @@ class HomeScreenDesign extends StatelessWidget {
               const AllCategoriesBlocBuilder(),
               verticalSpace(30),
               _textProductsAndViewAll(),
-              const OrderingAppCategoriesGridView()
+              const CategoryBlocBuilder()
             ],
           ),
           Padding(
@@ -44,11 +44,11 @@ class HomeScreenDesign extends StatelessWidget {
         children: [
           Text(
             "Products",
-            style: TextStyles.font20BlackSemiBold,
+            style: TextStyles.font22BlackSemiBold,
           ),
           Text(
             "View all",
-            style: TextStyles.font10BlackSemiBold,
+            style: TextStyles.font13BlackSemiBold,
           )
         ],
       ),
