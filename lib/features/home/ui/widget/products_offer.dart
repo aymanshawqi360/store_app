@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:store_app/core/widget/images_list.dart';
-
+import '../../../../core/helpers/images_list.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 
@@ -42,8 +41,8 @@ class ProductsOffer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Majority's best\nchoice",
-                    style: TextStyles.font10BlackSemiBold
-                        .copyWith(fontSize: 16.sp)),
+                    style: TextStyles.font13BlackSemiBold
+                        .copyWith(fontSize: 19.sp)),
                 Padding(
                   padding: EdgeInsets.only(right: 18.w),
                   child: Text("Look attractive",

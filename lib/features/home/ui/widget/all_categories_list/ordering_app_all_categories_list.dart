@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/features/home/data/apis/home_api_constants.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
 
 class OrderingAppCategoriesList extends StatefulWidget {
   final List<String> listAllCategories;
@@ -32,8 +32,8 @@ class _OrderingAppCategoriesListState extends State<OrderingAppCategoriesList> {
     );
   }
 
-  InkWell allCategories(int index) {
-    return InkWell(
+  GestureDetector allCategories(int index) {
+    return GestureDetector(
       onTap: () {
         setState(() {
           current = index;

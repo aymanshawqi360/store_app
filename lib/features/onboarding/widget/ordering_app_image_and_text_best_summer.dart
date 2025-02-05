@@ -29,7 +29,7 @@ class OrderingAppImageAndTextBestSummer extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 0.w),
                 child: Text(
                   "2022",
-                  style: TextStyles.font20BlackSemiBold,
+                  style: TextStyles.font22BlackSemiBold,
                 ),
               ),
               verticalSpace(8),

@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/widget/stars_lis.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/helpers/stars_list.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../data/models/category_response_model.dart';
 
-class OrderingAppCategoriesGridView extends StatelessWidget {
+class OrderingAppCategoriesGridView extends StatefulWidget {
+  final List<CategoryData> categoryList;
   const OrderingAppCategoriesGridView({
     super.key,
+    required this.categoryList,
   });
 
+  @override
+  State<OrderingAppCategoriesGridView> createState() =>
+      _OrderingAppCategoriesGridViewState();
+}
+
+class _OrderingAppCategoriesGridViewState
+    extends State<OrderingAppCategoriesGridView> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 15.h),
         child: GridView.builder(
-            itemCount: 6,
+            itemCount: widget.categoryList.length,
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -24,6 +34,7 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                 mainAxisExtent: 190,
                 mainAxisSpacing: 25.0),
             itemBuilder: (context, index) {
+              final cubitList = widget.categoryList[index];
               return Stack(
                 children: [
                   Container(
@@ -39,13 +50,9 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                image: const DecorationImage(
-                                  scale: 9,
-                                  image: AssetImage(
-                                    "assets/images/Mask group.png",
-                                  ),
-                                ),
+                                image: DecorationImage(
+                                    scale: 5,
+                                    image: NetworkImage("${cubitList.image}")),
                                 borderRadius: BorderRadius.circular(15)),
                             child: Padding(
                               padding: EdgeInsets.only(right: 7.w, top: 5.h),
