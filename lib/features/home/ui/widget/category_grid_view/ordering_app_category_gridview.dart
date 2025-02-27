@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:skeletonizer/skeletonizer.dart';
-import 'package:store_app/core/helpers/spacing.dart';
-import 'package:store_app/features/home/ui/widget/category_grid_view/carts.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/helpers/stars_list.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../data/models/products_response_model.dart';
@@ -59,36 +57,44 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                                 ]),
                           ),
                         ),
-                      ),
-                      Text("${cubitList.title}",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          strutStyle: const StrutStyle(leading: 0.7),
-                          style: TextStyles.font14DarkGraySemiBold),
-                      Row(
-                        children: [
-                          SvgPicture.asset(
-                            "assets/svgs/star.svg",
-                            width: 16,
-                          ),
-                          horizontalSpace(2),
-                          Text(cubitList.rating!.rate.toString())
-                        ],
-                      ),
-                      Text(
-                        "\$${cubitList.price}",
-                        strutStyle: const StrutStyle(leading: 1.2),
-                        style: TextStyles.font16DarkGraySemiBold
-                            .copyWith(fontSize: 15),
-                      ),
-                    ],
+                        verticalSpace(1),
+                        Text("Mens T-Shirt",
+                            overflow: TextOverflow.ellipsis,
+                            strutStyle: const StrutStyle(leading: 0.5),
+                            style: TextStyles.font14DarkGraySemiBold),
+                        Row(children: StarsLis.start),
+                        Text(
+                          "\$${118}",
+                          strutStyle: const StrutStyle(leading: 1.2),
+                          style: TextStyles.font12DarkGraySemiBold,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const Carts(),
-                const Favorited(),
-              ],
-            );
-          }),
-    ));
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                      height: 50,
+                      width: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20))),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          "assets/images/ordering_app_cart.png",
+                          scale: 19,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            }),
+      ),
+    );
   }
 }

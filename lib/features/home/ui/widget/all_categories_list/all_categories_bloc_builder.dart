@@ -34,14 +34,10 @@ class _AllCategoriesBlocBuilderState extends State<AllCategoriesBlocBuilder> {
           current is AllCategoriesError,
       builder: (context, state) {
         return state.maybeWhen(
-          allCategoriesSuccess:
-              (allCategoriesRallCategoriesResponseModelesponse) {
-            return OrderingAppCategoriesList(
-                listAllCategories:
-                    allCategoriesRallCategoriesResponseModelesponse);
-          },
-          allCategoriesLoading: () {
-            return _shimmerAllCategories();
+          allCategoriesLoading: () => _shimmerAllCategories(),
+          allCategoriesSuccess: (allCategoriesResponse) {
+            return OrderingAppAllCategoriesList(
+                listAllCategories: allCategoriesResponse);
           },
           allCategoriesError: (errorHandler) =>
               Text(errorHandler.apiErrorModel.codeError.toString()),
