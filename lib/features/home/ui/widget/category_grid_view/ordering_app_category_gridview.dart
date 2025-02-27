@@ -1,39 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/helpers/stars_list.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../data/models/category_response_model.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
-
-class OrderingAppCategoriesGridView extends StatelessWidget {
-  final List<Widget> start;
+class OrderingAppCategoriesGridView extends StatefulWidget {
+  final List<CategoryData> categoryList;
   const OrderingAppCategoriesGridView({
     super.key,
-    required this.start,
+    required this.categoryList,
   });
 
+  @override
+  State<OrderingAppCategoriesGridView> createState() =>
+      _OrderingAppCategoriesGridViewState();
+}
+
+class _OrderingAppCategoriesGridViewState
+    extends State<OrderingAppCategoriesGridView> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 15.h),
         child: GridView.builder(
-            itemCount: 6,
+            itemCount: widget.categoryList.length,
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 30.0,
-                // childAspectRatio: 2 / 2.5,
-                mainAxisExtent: 220,
+                crossAxisSpacing: 20.0,
+                mainAxisExtent: 190,
                 mainAxisSpacing: 25.0),
             itemBuilder: (context, index) {
+              final cubitList = widget.categoryList[index];
               return Stack(
                 children: [
                   Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-                    // width: 50,
-                    // height: 80,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(22),
                       color: ColorManager.white,
@@ -43,26 +50,37 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Container(
-                            // width: double.infinity,
-                            // height: 70.h,
                             decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                image: const DecorationImage(
-                                    scale: 7,
-                                    image: AssetImage(
-                                      "assets/images/Mask group.png",
-                                    )),
+                                image: DecorationImage(
+                                    scale: 5,
+                                    image: NetworkImage("${cubitList.image}")),
                                 borderRadius: BorderRadius.circular(15)),
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 7.w, top: 5.h),
+                              child: const Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite_rounded,
+                                    ),
+                                  ]),
+                            ),
                           ),
                         ),
-                        verticalSpace(height: 1),
+                        verticalSpace(1),
                         Text("Mens T-Shirt",
                             overflow: TextOverflow.ellipsis,
                             strutStyle: const StrutStyle(leading: 0.5),
                             style: TextStyles.font14DarkGraySemiBold),
-                        Row(
-                          children: start,
-                        ),
+                        Row(children: [
+                          SvgPicture.asset(
+                            "assets/svgs/star.svg",
+                            width: 16,
+                          ),
+                          horizontalSpace(2),
+                          Text(cubitList.rating!.rate.toString())
+                        ]),
                         Text(
                           "\$${118}",
                           strutStyle: const StrutStyle(leading: 1.2),
@@ -75,7 +93,6 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                     right: 0,
                     bottom: 0,
                     child: Container(
-                      //margin: EdgeInsets.symmetric(),
                       height: 50,
                       width: 45,
                       decoration: BoxDecoration(
@@ -91,7 +108,7 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               );
             }),
