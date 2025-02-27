@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'category_response_model.g.dart';
+part 'products_response_model.g.dart';
 
 @JsonSerializable()
-class CategoryData {
+class ProductsData {
   int? id;
   String? title;
   double? price;
@@ -11,7 +11,7 @@ class CategoryData {
   String? category;
   String? image;
   Rating? rating;
-  CategoryData(
+  ProductsData(
       {required this.id,
       required this.title,
       required this.price,
@@ -19,8 +19,8 @@ class CategoryData {
       required this.category,
       required this.image,
       required this.rating});
-  factory CategoryData.fromJson(Map<String, dynamic> json) =>
-      _$CategoryDataFromJson(json);
+  factory ProductsData.fromJson(Map<String, dynamic> json) =>
+      _$ProductsDataFromJson(json);
 }
 
 @JsonSerializable()

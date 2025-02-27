@@ -40,13 +40,13 @@ class OrderingAppImageAndTextBestOfThisMonths extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 13.w),
           child: SlideAction(
-            height: 65,
-            sliderButtonIconSize: 20,
+            height: 57,
+            sliderButtonIconSize: 17,
             outerColor: ColorManager.royalBlue,
             alignment: Alignment.bottomCenter,
             borderRadius: 9,
             elevation: 5,
-            onSubmit: () => context.pushNamed(Routes.homeScreen),
+            onSubmit: () => context.pushNamed(Routes.homeNavigationBar),
             text: "Go to Home",
           ),
         ),

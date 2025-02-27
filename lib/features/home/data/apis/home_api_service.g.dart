@@ -57,12 +57,12 @@ class _HomeApiService implements HomeApiService {
   }
 
   @override
-  Future<List<CategoryData>> getCategeory(String categoryName) async {
+  Future<List<ProductsData>> getCategeory(String categoryName) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<CategoryData>>(Options(
+    final _options = _setStreamType<List<ProductsData>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -79,10 +79,45 @@ class _HomeApiService implements HomeApiService {
           baseUrl,
         )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<CategoryData> _value;
+    late List<ProductsData> _value;
     try {
       _value = _result.data!
-          .map((dynamic i) => CategoryData.fromJson(i as Map<String, dynamic>))
+          .map((dynamic i) => ProductsData.fromJson(i as Map<String, dynamic>))
+          .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<ProductsData>> getAllProducts() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<List<ProductsData>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'products',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<List<dynamic>>(_options);
+    late List<ProductsData> _value;
+    try {
+      _value = _result.data!
+          .map((dynamic i) => ProductsData.fromJson(i as Map<String, dynamic>))
           .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);

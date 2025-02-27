@@ -11,4 +11,5 @@ class ColorManager {
   static const Color softPurple = Color(0xffE1CCFD);
   static const Color slateGray = Color(0xff4B566B);
   static const Color ghostWhite = Color(0xffF2F3F7);
+  static const Color silverGray = Color(0xffB1B2B9);
 }

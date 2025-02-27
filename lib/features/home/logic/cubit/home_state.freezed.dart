@@ -23,8 +23,8 @@ mixin _$HomeState {
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,8 +34,8 @@ mixin _$HomeState {
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) =>
       throw _privateConstructorUsedError;
@@ -45,8 +45,8 @@ mixin _$HomeState {
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) =>
@@ -159,8 +159,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) {
     return initial();
@@ -173,8 +173,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) {
     return initial?.call();
@@ -187,8 +187,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) {
@@ -305,8 +305,8 @@ class _$AllCategoriesLoadingImpl
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) {
     return allCategoriesLoading();
@@ -319,8 +319,8 @@ class _$AllCategoriesLoadingImpl
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) {
     return allCategoriesLoading?.call();
@@ -333,8 +333,8 @@ class _$AllCategoriesLoadingImpl
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) {
@@ -489,8 +489,8 @@ class _$AllCategoriesSuccessImpl
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) {
     return allCategoriesSuccess(allCategoriesList);
@@ -503,8 +503,8 @@ class _$AllCategoriesSuccessImpl
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) {
     return allCategoriesSuccess?.call(allCategoriesList);
@@ -517,8 +517,8 @@ class _$AllCategoriesSuccessImpl
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) {
@@ -673,8 +673,8 @@ class _$AllCategoriesErrorImpl
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) {
     return allCategoriesError(errorHandler);
@@ -687,8 +687,8 @@ class _$AllCategoriesErrorImpl
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) {
     return allCategoriesError?.call(errorHandler);
@@ -701,8 +701,8 @@ class _$AllCategoriesErrorImpl
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) {
@@ -777,6 +777,8 @@ abstract class _$$CategortLoadingImplCopyWith<$Res> {
   factory _$$CategortLoadingImplCopyWith(_$CategortLoadingImpl value,
           $Res Function(_$CategortLoadingImpl) then) =
       __$$CategortLoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String index});
 }
 
 /// @nodoc
@@ -789,6 +791,18 @@ class __$$CategortLoadingImplCopyWithImpl<$Res>
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$CategortLoadingImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
@@ -796,27 +810,43 @@ class __$$CategortLoadingImplCopyWithImpl<$Res>
 class _$CategortLoadingImpl
     with DiagnosticableTreeMixin
     implements CategortLoading {
-  const _$CategortLoadingImpl();
+  const _$CategortLoadingImpl(this.index);
+
+  @override
+  final String index;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeState.categoryLoading()';
+    return 'HomeState.categoryLoading(index: $index)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeState.categoryLoading'));
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeState.categoryLoading'))
+      ..add(DiagnosticsProperty('index', index));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CategortLoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CategortLoadingImpl &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, index);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CategortLoadingImplCopyWith<_$CategortLoadingImpl> get copyWith =>
+      __$$CategortLoadingImplCopyWithImpl<_$CategortLoadingImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -826,11 +856,11 @@ class _$CategortLoadingImpl
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) {
-    return categoryLoading();
+    return categoryLoading(index);
   }
 
   @override
@@ -840,11 +870,11 @@ class _$CategortLoadingImpl
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) {
-    return categoryLoading?.call();
+    return categoryLoading?.call(index);
   }
 
   @override
@@ -854,13 +884,13 @@ class _$CategortLoadingImpl
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) {
     if (categoryLoading != null) {
-      return categoryLoading();
+      return categoryLoading(index);
     }
     return orElse();
   }
@@ -913,7 +943,15 @@ class _$CategortLoadingImpl
 }
 
 abstract class CategortLoading implements HomeState {
-  const factory CategortLoading() = _$CategortLoadingImpl;
+  const factory CategortLoading(final String index) = _$CategortLoadingImpl;
+
+  String get index;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CategortLoadingImplCopyWith<_$CategortLoadingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -922,7 +960,7 @@ abstract class _$$CategorySuccessImplCopyWith<$Res> {
           $Res Function(_$CategorySuccessImpl) then) =
       __$$CategorySuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<CategoryData> categoryLisr});
+  $Res call({List<ProductsData> categoryLisr});
 }
 
 /// @nodoc
@@ -944,7 +982,7 @@ class __$$CategorySuccessImplCopyWithImpl<$Res>
       null == categoryLisr
           ? _value._categoryLisr
           : categoryLisr // ignore: cast_nullable_to_non_nullable
-              as List<CategoryData>,
+              as List<ProductsData>,
     ));
   }
 }
@@ -954,12 +992,12 @@ class __$$CategorySuccessImplCopyWithImpl<$Res>
 class _$CategorySuccessImpl
     with DiagnosticableTreeMixin
     implements CategorySuccess {
-  const _$CategorySuccessImpl(final List<CategoryData> categoryLisr)
+  const _$CategorySuccessImpl(final List<ProductsData> categoryLisr)
       : _categoryLisr = categoryLisr;
 
-  final List<CategoryData> _categoryLisr;
+  final List<ProductsData> _categoryLisr;
   @override
-  List<CategoryData> get categoryLisr {
+  List<ProductsData> get categoryLisr {
     if (_categoryLisr is EqualUnmodifiableListView) return _categoryLisr;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categoryLisr);
@@ -1008,8 +1046,8 @@ class _$CategorySuccessImpl
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) {
     return categorySuccess(categoryLisr);
@@ -1022,8 +1060,8 @@ class _$CategorySuccessImpl
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) {
     return categorySuccess?.call(categoryLisr);
@@ -1036,8 +1074,8 @@ class _$CategorySuccessImpl
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) {
@@ -1095,10 +1133,10 @@ class _$CategorySuccessImpl
 }
 
 abstract class CategorySuccess implements HomeState {
-  const factory CategorySuccess(final List<CategoryData> categoryLisr) =
+  const factory CategorySuccess(final List<ProductsData> categoryLisr) =
       _$CategorySuccessImpl;
 
-  List<CategoryData> get categoryLisr;
+  List<ProductsData> get categoryLisr;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1191,8 +1229,8 @@ class _$CategoryErrorImpl
     required TResult Function(List<String> allCategoriesList)
         allCategoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) allCategoriesError,
-    required TResult Function() categoryLoading,
-    required TResult Function(List<CategoryData> categoryLisr) categorySuccess,
+    required TResult Function(String index) categoryLoading,
+    required TResult Function(List<ProductsData> categoryLisr) categorySuccess,
     required TResult Function(ErrorHandler errorHandler) categoryError,
   }) {
     return categoryError(errorHandler);
@@ -1205,8 +1243,8 @@ class _$CategoryErrorImpl
     TResult? Function()? allCategoriesLoading,
     TResult? Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult? Function()? categoryLoading,
-    TResult? Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult? Function(String index)? categoryLoading,
+    TResult? Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryError,
   }) {
     return categoryError?.call(errorHandler);
@@ -1219,8 +1257,8 @@ class _$CategoryErrorImpl
     TResult Function()? allCategoriesLoading,
     TResult Function(List<String> allCategoriesList)? allCategoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? allCategoriesError,
-    TResult Function()? categoryLoading,
-    TResult Function(List<CategoryData> categoryLisr)? categorySuccess,
+    TResult Function(String index)? categoryLoading,
+    TResult Function(List<ProductsData> categoryLisr)? categorySuccess,
     TResult Function(ErrorHandler errorHandler)? categoryError,
     required TResult orElse(),
   }) {

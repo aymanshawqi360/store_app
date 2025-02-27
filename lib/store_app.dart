@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/routing/app_route.dart';
 import 'package:store_app/core/routing/routes.dart';
 
-class SorteApp extends StatelessWidget {
+class StoreApp extends StatelessWidget {
   final AppRouter appRouter;
-  const SorteApp({
+  const StoreApp({
     super.key,
     required this.appRouter,
   });
