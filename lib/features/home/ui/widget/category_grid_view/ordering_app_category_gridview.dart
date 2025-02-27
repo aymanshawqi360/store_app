@@ -1,46 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/helpers/stars_list.dart';
+
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
-import '../../../data/models/category_response_model.dart';
+import '../../../data/models/products_response_model.dart';
 
-class OrderingAppCategoriesGridView extends StatefulWidget {
-  final List<CategoryData> categoryList;
+class OrderingAppCategoriesGridView extends StatelessWidget {
+  final List<ProductsData> categoryList;
   const OrderingAppCategoriesGridView({
     super.key,
     required this.categoryList,
   });
 
   @override
-  State<OrderingAppCategoriesGridView> createState() =>
-      _OrderingAppCategoriesGridViewState();
-}
-
-class _OrderingAppCategoriesGridViewState
-    extends State<OrderingAppCategoriesGridView> {
-  @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 15.h),
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 0.h),
         child: GridView.builder(
-            itemCount: widget.categoryList.length,
+            itemCount: categoryList.length,
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 20.0,
-                mainAxisExtent: 190,
-                mainAxisSpacing: 25.0),
+                crossAxisSpacing: 15.0,
+                mainAxisExtent: 160,
+                mainAxisSpacing: 18.0),
             itemBuilder: (context, index) {
-              final cubitList = widget.categoryList[index];
+              final cubitList = categoryList[index];
               return Stack(
                 children: [
                   Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(22),
                       color: ColorManager.white,
@@ -51,41 +44,40 @@ class _OrderingAppCategoriesGridViewState
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    scale: 5,
-                                    image: NetworkImage("${cubitList.image}")),
                                 borderRadius: BorderRadius.circular(15)),
                             child: Padding(
-                              padding: EdgeInsets.only(right: 7.w, top: 5.h),
-                              child: const Row(
+                              padding: EdgeInsets.only(right: 5.w, top: 5.h),
+                              child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(
-                                      Icons.favorite_rounded,
-                                    ),
+                                    Container(
+                                        padding: EdgeInsets.only(top: 5.h),
+                                        child: Image.network(
+                                            height: 70, "${cubitList.image}")),
                                   ]),
                             ),
                           ),
                         ),
-                        verticalSpace(1),
-                        Text("Mens T-Shirt",
-                            overflow: TextOverflow.ellipsis,
-                            strutStyle: const StrutStyle(leading: 0.5),
-                            style: TextStyles.font14DarkGraySemiBold),
-                        Row(children: [
-                          SvgPicture.asset(
+                        //  verticalSpace(1),
+                          Text("Mens T-Shirt",
+                              overflow: TextOverflow.ellipsis,
+                              strutStyle: const StrutStyle(leading: 0.5),
+                              style: TextStyles.font14DarkGraySemiBold),
+                          Row(children: [
+                              SvgPicture.asset(
                             "assets/svgs/star.svg",
                             width: 16,
                           ),
                           horizontalSpace(2),
                           Text(cubitList.rating!.rate.toString())
-                        ]),
-                        Text(
-                          "\$${118}",
-                          strutStyle: const StrutStyle(leading: 1.2),
-                          style: TextStyles.font12DarkGraySemiBold,
-                        ),
+                          ]),
+                          Text(
+                            "\$${118}",
+                            strutStyle: const StrutStyle(leading: 1.2),
+                            style: TextStyles.font13DarkGrayLight,
+                          ),
+                        
                       ],
                     ),
                   ),

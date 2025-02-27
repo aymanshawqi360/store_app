@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:store_app/core/networking/api_error_handler.dart';
 
-import '../../data/models/category_response_model.dart';
+import '../../data/models/products_response_model.dart';
 
 part 'home_state.freezed.dart';
 
@@ -18,8 +18,8 @@ class HomeState with _$HomeState {
       AllCategoriesError;
 
   //Category
-  const factory HomeState.categoryLoading() = CategortLoading;
-  const factory HomeState.categorySuccess(List<CategoryData> categoryLisr) =
+  const factory HomeState.categoryLoading(String index) = CategortLoading;
+  const factory HomeState.categorySuccess(List<ProductsData> categoryLisr) =
       CategorySuccess;
   const factory HomeState.categoryError(ErrorHandler errorHandler) =
       CategoryError;

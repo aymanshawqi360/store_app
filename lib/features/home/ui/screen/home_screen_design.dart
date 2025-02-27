@@ -1,36 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/helpers/spacing.dart';
-import 'package:store_app/features/home/ui/widget/all_categories_list/all_categories_bloc_builder.dart';
+import 'package:store_app/core/di/dependency_injection.dart';
+import 'package:store_app/features/home/logic/cubit/home_cubit.dart';
+
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/styles.dart';
+import '../widget/all_categories_list/all_categories_bloc_builder.dart';
 import '../widget/category_grid_view/category_bloc_builder.dart';
 import '../widget/home_to_bar.dart';
-import '../widget/image_carouselslider.dart';
 
 class HomeScreenDesign extends StatelessWidget {
-  const HomeScreenDesign({
-    super.key,
-  });
+  const HomeScreenDesign({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return BlocProvider(
+      create: (context) => HomeCubit(getIt()),
+      child: Column(
         children: [
-          Column(
-            children: [
-              const HomeToBar(),
-              verticalSpace(110),
-              const AllCategoriesBlocBuilder(),
-              verticalSpace(30),
-              _textProductsAndViewAll(),
-              const CategoryBlocBuilder()
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 100.h),
-            child: const ImageCarouselSlider(),
-          ),
+          const HomeToBar(),
+          verticalSpace(30),
+          const AllCategoriesBlocBuilder(),
+          verticalSpace(30),
+          _textProductsAndViewAll(),
+          CategoryBlocBuilder(),
         ],
       ),
     );

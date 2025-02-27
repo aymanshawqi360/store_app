@@ -17,10 +17,10 @@ class OrderingAppImageAndTextBestSummer extends StatelessWidget {
         Image.asset(
           "${image}",
           fit: BoxFit.cover,
-          width: double.infinity,
+          width: double.maxFinite,
         ),
         Positioned(
-          top: 80,
+          top: 55.h,
           left: 27,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:store_app/core/helpers/spacing.dart';
 import '../../../../core/helpers/images_list.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
@@ -12,48 +13,38 @@ class ProductsOffer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(
-        horizontal: 10.w,
-      ),
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("${ImagesList.productsOfferList[index]}"),
-            alignment: Alignment.centerLeft,
-          ),
-          gradient: const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              ColorManager.lightBlue,
-              ColorManager.softPurple,
-            ],
-          ),
-          borderRadius: BorderRadius.circular(20)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              left: 60.w,
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        margin: EdgeInsets.symmetric(
+          horizontal: 10.w,
+        ),
+        decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                ColorManager.lightBlue,
+                ColorManager.softPurple,
+              ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            borderRadius: BorderRadius.circular(20)),
+        child: Row(
+          children: [
+            Image.asset(
+              "${ImagesList.productsOfferList[index].toString()}",
+              scale: 0.1,
+            ),
+            horizontalSpace(10),
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text("Majority's best\nchoice",
-                    style: TextStyles.font13BlackSemiBold
-                        .copyWith(fontSize: 19.sp)),
-                Padding(
-                  padding: EdgeInsets.only(right: 18.w),
-                  child: Text("Look attractive",
-                      style: TextStyles.font14SlateGrayLight),
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
+                    style:
+                        TextStyles.font13BlackSemiBold.copyWith(fontSize: 17)),
+                Text("Look attractive", style: TextStyles.font14SlateGrayLight),
                 Container(
-                  height: 27.h,
-                  width: 80.w,
+                  height: 19,
+                  width: 85.w,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12)),
@@ -74,9 +65,7 @@ class ProductsOffer extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ));
   }
 }

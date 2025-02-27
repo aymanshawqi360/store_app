@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/features/home/ui/widget/image_carouselslider.dart';
 
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
@@ -14,7 +15,7 @@ class HomeToBar extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 155.h,
+          height: 170,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
               gradient: LinearGradient(
@@ -24,38 +25,42 @@ class HomeToBar extends StatelessWidget {
               )),
         ),
         Padding(
-          padding: EdgeInsets.only(
-            top: 50.h,
-          ),
+          padding: const EdgeInsets.only(top: 40),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Image.asset(
                 "assets/images/search.png",
                 color: ColorManager.white,
-                width: 27,
+                width: 22,
               ),
               Row(
                 children: [
                   Image.asset(
                     "assets/images/app_logo.png",
                     color: ColorManager.white,
-                    width: 48,
+                    width: 49,
                   ),
                   Text(
                     "Ordering App",
-                    style: TextStyles.font22BlackSemiBold
-                        .copyWith(color: ColorManager.white, fontSize: 17.sp),
+                    style: TextStyles.font22BlackSemiBold.copyWith(
+                      color: ColorManager.white,
+                      fontSize: 19.sp,
+                    ),
                   ),
                 ],
               ),
               Image.asset(
                 "assets/images/Notification.png",
                 color: ColorManager.white,
-                width: 27,
+                width: 23,
               )
             ],
           ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 90),
+          child: ImageCarouselSlider(),
         ),
       ],
     );
