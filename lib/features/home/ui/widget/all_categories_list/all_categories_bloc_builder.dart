@@ -36,7 +36,7 @@ class _AllCategoriesBlocBuilderState extends State<AllCategoriesBlocBuilder> {
         return state.maybeWhen(
           allCategoriesLoading: () => _shimmerAllCategories(),
           allCategoriesSuccess: (allCategoriesResponse) {
-            return OrderingAppAllCategoriesList(
+            return OrderingAppCategoriesList(
                 listAllCategories: allCategoriesResponse);
           },
           allCategoriesError: (errorHandler) =>

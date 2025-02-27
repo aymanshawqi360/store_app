@@ -30,9 +30,9 @@ class _CategoryBlocBuilderState extends State<CategoryBlocBuilder> {
             orElse: () => const SizedBox.shrink(),
             categoryError: (errorHandler) =>
                 Text(errorHandler.apiErrorModel.codeError.toString()),
-            categoryLoading: () => Center(child: CircularProgressIndicator()),
+            // categoryLoading: () => Center(child: CircularProgressIndicator()),
             categorySuccess: (categoryList) {
-              return OrderingAppCategoryGridView(categoryList: categoryList);
+              return OrderingAppCategoriesGridView(categoryList: categoryList);
             });
       },
     );
