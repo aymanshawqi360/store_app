@@ -23,8 +23,9 @@ class AllCategoriesBlocBuilder extends StatelessWidget {
         return state.maybeWhen(
           allCategoriesLoading: () => _shimmerAllCategories(),
           allCategoriesSuccess: (allCategoriesResponse) {
-            return OrderingAppAllCategoriesList(
+            return OrderingAppCategoriesList(
                 listAllCategories: allCategoriesResponse);
+                
           },
           allCategoriesError: (errorHandler) =>
               Text(errorHandler.apiErrorModel.codeError.toString()),

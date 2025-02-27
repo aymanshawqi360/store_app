@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/helpers/stars_list.dart';
 import '../../../../../core/theming/colors.dart';
@@ -72,7 +73,14 @@ class _OrderingAppCategoriesGridViewState
                             overflow: TextOverflow.ellipsis,
                             strutStyle: const StrutStyle(leading: 0.5),
                             style: TextStyles.font14DarkGraySemiBold),
-                        Row(children: StarsLis.start),
+                        Row(children: [
+                          SvgPicture.asset(
+                            "assets/svgs/star.svg",
+                            width: 16,
+                          ),
+                          horizontalSpace(2),
+                          Text(cubitList.rating!.rate.toString())
+                        ]),
                         Text(
                           "\$${118}",
                           strutStyle: const StrutStyle(leading: 1.2),

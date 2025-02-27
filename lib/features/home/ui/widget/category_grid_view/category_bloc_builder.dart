@@ -34,7 +34,7 @@ class _CategoryBlocBuilderState extends State<CategoryBlocBuilder> {
                 Text(errorHandler.apiErrorModel.codeError.toString()),
             categoryLoading: () => Center(child: CircularProgressIndicator()),
             categorySuccess: (categoryList) {
-              return OrderingAppCategoryGridView(categoryList: categoryList);
+              return OrderingAppCategoriesGridView(categoryList: categoryList);
             });
       },
     );
