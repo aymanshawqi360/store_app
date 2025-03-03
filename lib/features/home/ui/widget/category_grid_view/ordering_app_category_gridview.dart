@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:store_app/features/home/ui/widget/category_grid_view/carts.dart';
+import 'package:store_app/features/home/ui/widget/category_grid_view/favorited.dart';
 import '../../../../../core/helpers/spacing.dart';
 
 import '../../../../../core/theming/colors.dart';
@@ -41,69 +43,66 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 5.w, top: 5.h),
-                              child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                        padding: EdgeInsets.only(top: 5.h),
-                                        child: Image.network(
-                                            height: 70, "${cubitList.image}")),
-                                  ]),
-                            ),
-                          ),
-                        ),
-                        //  verticalSpace(1),
-                          Text("Mens T-Shirt",
-                              overflow: TextOverflow.ellipsis,
-                              strutStyle: const StrutStyle(leading: 0.5),
-                              style: TextStyles.font14DarkGraySemiBold),
-                          Row(children: [
-                              SvgPicture.asset(
+                        imagesAndFavorited(cubitList),
+                        verticalSpace(5),
+                        title(cubitList),
+                        Row(children: [
+                          SvgPicture.asset(
                             "assets/svgs/star.svg",
-                            width: 16,
+                            width: 15,
                           ),
                           horizontalSpace(2),
-                          Text(cubitList.rating!.rate.toString())
-                          ]),
-                          Text(
-                            "\$${118}",
-                            strutStyle: const StrutStyle(leading: 1.2),
-                            style: TextStyles.font13DarkGrayLight,
-                          ),
-                        
+                          rate(cubitList)
+                        ]),
+                        price(cubitList),
                       ],
                     ),
                   ),
-                  Positioned(
-                    right: 0,
-                    bottom: 0,
-                    child: Container(
-                      height: 50,
-                      width: 45,
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20))),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Image.asset(
-                          "assets/images/ordering_app_cart.png",
-                          scale: 19,
-                        ),
-                      ),
-                    ),
-                  ),
+                  const Carts()
                 ],
               );
             }),
+      ),
+    );
+  }
+
+  Padding imagesAndFavorited(ProductsData cubitList) {
+    return Padding(
+      padding: EdgeInsets.only(right: 5.w, top: 5.h),
+      child: Container(
+          margin: EdgeInsets.symmetric(vertical: 5.h),
+          height: 70.h,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                cubitList.image.toString(),
+              ),
+            ),
+          ),
+          child: const Favorited()),
+    );
+  }
+
+  Text title(ProductsData cubitList) {
+    return Text("${cubitList.title}",
+        overflow: TextOverflow.ellipsis,
+        strutStyle: const StrutStyle(leading: 0.4),
+        style: TextStyles.font14BlackSemiBold);
+  }
+
+  Text price(ProductsData cubitList) {
+    return Text(
+      "\$${cubitList.price}",
+      strutStyle: const StrutStyle(leading: 0.5),
+      style: TextStyles.font13DarkGrayRegular,
+    );
+  }
+
+  Widget rate(ProductsData cubitList) {
+    return Padding(
+      padding: EdgeInsets.only(top: 2.h),
+      child: Text(
+        cubitList.rating!.rate.toString(),
       ),
     );
   }
