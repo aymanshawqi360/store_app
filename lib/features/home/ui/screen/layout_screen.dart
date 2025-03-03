@@ -29,21 +29,24 @@ class LayoutScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _buildNavItem(
-                          iconOne: "assets/images/home (1).png",
-                          iconTwo: "assets/images/home (2).png",
-                          index: 0,
-                          label: "Home",
-                          height: 25.8,
-                          context),
                       Padding(
-                        padding: EdgeInsets.only(top: 0.8.h),
+                        padding: EdgeInsets.only(top: 1.h),
+                        child: _buildNavItem(
+                            iconOne: "assets/images/home (1).png",
+                            iconTwo: "assets/images/home (2).png",
+                            index: 0,
+                            label: "Home",
+                            height: 24.0,
+                            context),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 1.h),
                         child: _buildNavItem(
                             iconOne: "assets/images/category(1).png",
                             iconTwo: "assets/images/category(2).png",
                             index: 1,
                             label: "Caregories",
-                            height: 25.8,
+                            height: 24.0,
                             context),
                       ),
                       _buildNavItem(
