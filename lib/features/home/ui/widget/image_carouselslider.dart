@@ -16,7 +16,7 @@ class ImageCarouselSlider extends StatelessWidget {
       child: CarouselSlider.builder(
         itemCount: ImagesList.productsOfferList.length,
         options: CarouselOptions(
-            height: 120,
+            height: 120.h,
             autoPlay: true,
             enlargeCenterPage: true,
             enlargeStrategy: CenterPageEnlargeStrategy.height),

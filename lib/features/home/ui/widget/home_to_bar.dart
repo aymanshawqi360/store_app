@@ -15,7 +15,7 @@ class HomeToBar extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 170,
+          height: 170.h,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
               gradient: LinearGradient(
@@ -58,9 +58,9 @@ class HomeToBar extends StatelessWidget {
             ],
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 90),
-          child: ImageCarouselSlider(),
+        Padding(
+          padding: EdgeInsets.only(top: 90.h),
+          child: const ImageCarouselSlider(),
         ),
       ],
     );

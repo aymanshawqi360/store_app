@@ -9,7 +9,7 @@ class Carts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       right: 0,
-      bottom: 0,
+      bottom: 16.0,
       child: Container(
         height: 50,
         width: 45,
