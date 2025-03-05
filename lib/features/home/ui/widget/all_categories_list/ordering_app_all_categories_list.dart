@@ -23,7 +23,7 @@ class _OrderingAppCategoriesListState extends State<OrderingAppCategoriesList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 36.h,
+      height: 37.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.listAllCategories.length,
@@ -42,7 +42,7 @@ class _OrderingAppCategoriesListState extends State<OrderingAppCategoriesList> {
                     EdgeInsetsDirectional.only(start: index == 0 ? 1 : 24.w),
                 child: Container(
                   alignment: Alignment.center,
-                  width: 115,
+                  width: 150.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       gradient: current == index
@@ -57,7 +57,7 @@ class _OrderingAppCategoriesListState extends State<OrderingAppCategoriesList> {
                               colors: [Colors.black, Colors.black])),
                   child: Text("${widget.listAllCategories[index]}",
                       textAlign: TextAlign.center,
-                      style: TextStyles.font13ghostWhiteBold),
+                      style: TextStyles.font13ghostWhiteMedium),
                 )),
           );
         },

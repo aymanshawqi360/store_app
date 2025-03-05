@@ -20,9 +20,9 @@ class HomeScreenDesign extends StatelessWidget {
       child: Column(
         children: [
           const HomeToBar(),
-          verticalSpace(30),
+          verticalSpace(40),
           const AllCategoriesBlocBuilder(),
-          verticalSpace(30),
+          verticalSpace(40),
           _textProductsAndViewAll(),
           CategoryBlocBuilder(),
         ],

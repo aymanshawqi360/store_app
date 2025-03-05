@@ -44,9 +44,9 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     fontSize: 12.sp,
   );
-  static TextStyle font13ghostWhiteBold = TextStyle(
+  static TextStyle font13ghostWhiteMedium = TextStyle(
     color: ColorManager.ghostWhite,
-    fontWeight: FontWeightHelper.bold,
+    fontWeight: FontWeightHelper.medium,
     fontSize: 13.sp,
   );
   static TextStyle font13blackMedium = TextStyle(
@@ -63,5 +63,30 @@ class TextStyles {
     color: ColorManager.darkGray,
     fontWeight: FontWeightHelper.regular,
     fontSize: 14.sp,
+  );
+  static TextStyle font15BlackRegular = TextStyle(
+    color: ColorManager.black,
+    fontWeight: FontWeightHelper.regular,
+    fontSize: 15.sp,
+  );
+  static TextStyle font17BlackBold = TextStyle(
+    color: ColorManager.black,
+    fontWeight: FontWeightHelper.bold,
+    fontSize: 17.sp,
+  );
+  static TextStyle font14DarkGrayRegular = TextStyle(
+    color: ColorManager.darkGray,
+    fontWeight: FontWeightHelper.regular,
+    fontSize: 14.sp,
+  );
+  static TextStyle font16blackBold = TextStyle(
+    color: ColorManager.black,
+    fontWeight: FontWeightHelper.bold,
+    fontSize: 16.sp,
+  );
+  static TextStyle font15SilverGrayLight = TextStyle(
+    color: ColorManager.silverGray,
+    fontWeight: FontWeightHelper.light,
+    fontSize: 15.sp,
   );
 }

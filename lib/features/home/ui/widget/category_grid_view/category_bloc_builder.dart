@@ -5,7 +5,7 @@ import '../../../logic/cubit/home_cubit.dart';
 import '../../../logic/cubit/home_state.dart';
 
 class CategoryBlocBuilder extends StatefulWidget {
-  CategoryBlocBuilder({super.key});
+  const CategoryBlocBuilder({super.key});
 
   @override
   State<CategoryBlocBuilder> createState() => _CategoryBlocBuilderState();
@@ -23,14 +23,14 @@ class _CategoryBlocBuilderState extends State<CategoryBlocBuilder> {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-           current is CategortLoading ||
-          current is CategoryError || current is CategorySuccess,
+          current is CategortLoading ||
+          current is CategoryError ||
+          current is CategorySuccess,
       builder: (context, state) {
         return state.maybeWhen(
             orElse: () => const SizedBox.shrink(),
             categoryError: (errorHandler) =>
                 Text(errorHandler.apiErrorModel.codeError.toString()),
-            // categoryLoading: () => Center(child: CircularProgressIndicator()),
             categorySuccess: (categoryList) {
               return OrderingAppCategoriesGridView(categoryList: categoryList);
             });
@@ -38,4 +38,3 @@ class _CategoryBlocBuilderState extends State<CategoryBlocBuilder> {
     );
   }
 }
-

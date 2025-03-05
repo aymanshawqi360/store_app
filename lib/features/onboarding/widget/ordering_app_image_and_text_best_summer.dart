@@ -5,7 +5,7 @@ import '../../../core/theming/styles.dart';
 
 class OrderingAppImageAndTextBestSummer extends StatelessWidget {
   final String image;
-  OrderingAppImageAndTextBestSummer({
+  const OrderingAppImageAndTextBestSummer({
     Key? key,
     required this.image,
   }) : super(key: key);

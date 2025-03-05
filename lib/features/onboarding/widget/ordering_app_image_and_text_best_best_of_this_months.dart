@@ -40,8 +40,8 @@ class OrderingAppImageAndTextBestOfThisMonths extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 13.w),
           child: SlideAction(
-            height: 57,
-            sliderButtonIconSize: 17,
+            height: 59.h,
+            sliderButtonIconSize: 16,
             outerColor: ColorManager.royalBlue,
             alignment: Alignment.bottomCenter,
             borderRadius: 9,
