@@ -25,7 +25,6 @@ class _AllCategoriesBlocBuilderState extends State<AllCategoriesBlocBuilder> {
     super.initState();
   }
 
-  List<String> allCategoriesResponse = [];
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/core/di/dependency_injection.dart';
 import 'package:store_app/core/routing/routes.dart';
+import 'package:store_app/features/cart/cart_screen.dart';
 import 'package:store_app/features/categories/categories_screen.dart';
-import 'package:store_app/features/favorites/favorites_screen.dart';
+import 'package:store_app/features/favorites/ui/favorites_screen.dart';
+import 'package:store_app/features/home/data/apis/home_api_constants.dart';
 import 'package:store_app/features/home/data/models/products_response_model.dart';
-import 'package:store_app/features/home/logic/cubit_home_navigation_bar/cubit/layout_screen_cubit.dart';
+import 'package:store_app/features/home/logic/cubit/home_cubit.dart';
+import 'package:store_app/features/home/logic/cubit_layout_navigation/cubit/layout_screen_cubit.dart';
 import 'package:store_app/features/home/ui/screen/layout_screen.dart';
 import 'package:store_app/features/home/ui/widget/view_details_producte/view_details_products.dart';
 
@@ -18,34 +22,32 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
-      case Routes.homeNavigationBar:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                  create: (context) {
-                    return LayoutScreenCubit();
-                  },
-                  child: const LayoutScreen(),
-                ));
-      case Routes.homeScreen:
-        return MaterialPageRoute(
-          builder: (context) => const HomeScreenDesign(),
-        );
 
-      case Routes.cartScreen:
-        return MaterialPageRoute(
-          builder: (context) => const HomeScreenDesign(),
-        );
+      case Routes.layoutScreen:
+        return MaterialPageRoute(builder: (_) {
+          return const LayoutScreen();
+        });
+
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (_) {
+          return const HomeScreenDesign();
+        });
       case Routes.favoritesScreen:
         return MaterialPageRoute(
-          builder: (context) => const FavoritesScreen(),
+          builder: (_) => const FavoritesScreen(),
         );
+      case Routes.cartScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CartScreen(),
+        );
+
       case Routes.categoriesScreen:
         return MaterialPageRoute(
-          builder: (context) => const CategoriesScreen(),
+          builder: (_) => const CategoriesScreen(),
         );
       case Routes.viewDetailsProdute:
         return MaterialPageRoute(
-          builder: (context) => ViewDetailsProducts(
+          builder: (_) => ViewDetailsProducts(
             allProducts: arguments as ProductsData,
           ),
         );

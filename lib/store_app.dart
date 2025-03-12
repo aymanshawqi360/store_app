@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/routing/app_route.dart';
 import 'package:store_app/core/routing/routes.dart';
+import 'package:store_app/core/theming/colors.dart';
 
 class StoreApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -16,7 +17,9 @@ class StoreApp extends StatelessWidget {
         designSize: const Size(414, 896),
         minTextAdapt: true,
         child: MaterialApp(
-          theme: ThemeData(scaffoldBackgroundColor: const Color(0xffF2F3F7)),
+          theme: ThemeData(
+            scaffoldBackgroundColor: const Color(0xffF2F3F7),
+          ),
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.onboardingScreen,
           onGenerateRoute: appRouter.generateRoute,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/helpers/spacing.dart';
-
-import '../../../../../core/theming/colors.dart';
+import 'package:store_app/core/theming/colors.dart';
 
 class BottomAddToCart extends StatelessWidget {
   const BottomAddToCart({super.key});
