@@ -1,6 +1,11 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:store_app/features/cart/cart_screen.dart';
+import 'package:store_app/features/categories/categories_screen.dart';
+import 'package:store_app/features/favorites/ui/favorites_screen.dart';
 import 'package:store_app/features/home/data/models/products_response_model.dart';
 import 'package:store_app/features/home/data/repos/all_products_repo.dart';
+import 'package:store_app/features/home/ui/screen/home_screen_design.dart';
 
 import 'home_state.dart';
 
@@ -35,6 +40,7 @@ class HomeCubit extends Cubit<HomeState> {
 
     response.when(success: (categoryResponseModel) {
       categoryList = categoryResponseModel;
+
       emit(CategorySuccess(categoryList));
     }, failure: (error) {
       emit(CategoryError(error));

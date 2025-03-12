@@ -46,7 +46,7 @@ class OrderingAppImageAndTextBestOfThisMonths extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             borderRadius: 9,
             elevation: 5,
-            onSubmit: () => context.pushNamed(Routes.homeNavigationBar),
+            onSubmit: () => context.pushNamed(Routes.layoutScreen),
             text: "Go to Home",
           ),
         ),

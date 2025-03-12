@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:store_app/core/helpers/extensions.dart';
+import 'package:store_app/core/helpers/spacing.dart';
+import 'package:store_app/core/routing/routes.dart';
+import 'package:store_app/core/theming/colors.dart';
+import 'package:store_app/core/theming/styles.dart';
+import 'package:store_app/features/home/data/models/products_response_model.dart';
 import 'package:store_app/features/home/ui/widget/category_grid_view/carts.dart';
 import 'package:store_app/features/home/ui/widget/category_grid_view/favorited.dart';
-import '../../../../../core/helpers/spacing.dart';
-
-import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
-import '../../../data/models/products_response_model.dart';
 
 class OrderingAppCategoriesGridView extends StatelessWidget {
   final List<ProductsData> categoryList;
@@ -69,7 +68,7 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Favorited(),
+                  Favorited(productsData: cubitList),
                   const Carts()
                 ],
               );
@@ -100,6 +99,39 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                           image: DecorationImage(
                         image: imageProvider,
                       )),
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 7.w, bottom: 18.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // GestureDetector(
+                            //   onTap: () {},
+                            //   child: BlocBuilder<HomeCubit, HomeState>(
+                            //     builder: (context, state) {
+                            //       final cubit =
+                            //           context.read<HomeCubit>().addFavorite;
+                            //       return Image.asset(
+                            //         context
+                            //                 .read<HomeCubit>()
+                            //                 .addFavorite
+                            //                 .contains(cubitList.id)
+                            //             ? "assets/images/favorite(1).png"
+                            //             : "assets/images/favorite(1).png",
+                            //         height: 24,
+                            //         color: context
+                            //                 .read<HomeCubit>()
+                            //                 .addFavorite
+                            //                 .contains(cubitList.id)
+                            //             ? Colors.red
+                            //             : Colors.black,
+                            //       );
+                            //     },
+                            //   ),
+                            // )
+                          ],
+                        ),
+                      ),
                     );
                   }),
             ),

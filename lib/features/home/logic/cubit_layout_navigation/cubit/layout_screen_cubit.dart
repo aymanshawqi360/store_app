@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:store_app/features/cart/cart_screen.dart';
 import 'package:store_app/features/categories/categories_screen.dart';
-import 'package:store_app/features/favorites/favorites_screen.dart';
+import 'package:store_app/features/favorites/ui/favorites_screen.dart';
 
 import '../../../ui/screen/home_screen_design.dart';
 
@@ -14,8 +14,8 @@ class LayoutScreenCubit extends Cubit<LayoutScreenState> {
   List<Widget> layoutScreen = [
     const HomeScreenDesign(),
     const CategoriesScreen(),
-    const CartScreen(),
     const FavoritesScreen(),
+    const CartScreen(),
   ];
   int bottomNavigationBarCurrentIndex = 0;
   void getCurrentIndex(int index) {
