@@ -69,7 +69,9 @@ class OrderingAppCategoriesGridView extends StatelessWidget {
                     ),
                   ),
                   Favorited(productsData: cubitList),
-                  const Carts()
+                  Carts(
+                    productsData: cubitList,
+                  )
                 ],
               );
             }),

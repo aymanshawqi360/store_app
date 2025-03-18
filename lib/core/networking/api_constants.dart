@@ -1,3 +1,6 @@
+import 'package:store_app/core/di/dependency_injection.dart';
+import 'package:store_app/features/cart/cubit/cart_cubit.dart';
+
 class ApiConstants {
   static const String baseUrl = "https://fakestoreapi.com/";
 }
@@ -19,3 +22,5 @@ class ApiErrors {
   static const String retryAgainMessage = "retry_again_message";
   static const String ok = "Ok";
 }
+
+final cartCubit = getIt<CartCubit>();

@@ -19,6 +19,12 @@ class _CategoryBlocBuilderState extends State<CategoryBlocBuilder> {
     super.initState();
   }
 
+  // @override
+  // void dispose() {
+  //   BlocProvider.of<HomeCubit>(context).getCategory("electronics");
+  //   super.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
