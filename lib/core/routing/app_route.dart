@@ -38,7 +38,7 @@ class AppRouter {
         );
       case Routes.cartScreen:
         return MaterialPageRoute(
-          builder: (_) => const CartScreen(),
+          builder: (_) => CartScreen(),
         );
 
       case Routes.categoriesScreen:

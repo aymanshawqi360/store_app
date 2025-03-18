@@ -11,15 +11,15 @@ part 'layout_screen_state.dart';
 class LayoutScreenCubit extends Cubit<LayoutScreenState> {
   LayoutScreenCubit() : super(LayoutScreenInitial());
 
-  List<Widget> layoutScreen = [
-    const HomeScreenDesign(),
-    const CategoriesScreen(),
-    const FavoritesScreen(),
-    const CartScreen(),
-  ];
-  int bottomNavigationBarCurrentIndex = 0;
-  void getCurrentIndex(int index) {
-    bottomNavigationBarCurrentIndex = index;
-    emit(CurrentIndex());
-  }
+  // List<Widget> layoutScreen = [
+  //   const HomeScreenDesign(),
+  //   const CategoriesScreen(),
+  //   const FavoritesScreen(),
+  //    CartScreen(),
+  // ];
+  // int bottomNavigationBarCurrentIndex = 0;
+  // void getCurrentIndex(int index) {
+  //   bottomNavigationBarCurrentIndex = index;
+  //   emit(CurrentIndex());
+  // }
 }

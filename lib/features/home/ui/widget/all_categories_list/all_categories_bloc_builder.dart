@@ -25,6 +25,12 @@ class _AllCategoriesBlocBuilderState extends State<AllCategoriesBlocBuilder> {
     super.initState();
   }
 
+  // @override
+  // void dispose() {
+  //   BlocProvider.of<HomeCubit>(context).getALLCategories();
+  //   super.dispose();
+  // }
+
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>

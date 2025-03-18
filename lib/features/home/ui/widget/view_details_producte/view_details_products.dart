@@ -10,6 +10,7 @@ import 'package:store_app/core/routing/routes.dart';
 import 'package:store_app/core/theming/colors.dart';
 import 'package:store_app/core/theming/styles.dart';
 import 'package:store_app/core/widget/view_details_products.dart';
+import 'package:store_app/features/cart/constants/constants.dart';
 import 'package:store_app/features/favorites/logic/cubit/favorite_cubit.dart';
 import 'package:store_app/features/home/data/apis/home_api_constants.dart';
 import 'package:store_app/features/home/data/models/products_response_model.dart';
@@ -50,12 +51,13 @@ class _ViewDetailsProductsState extends State<ViewDetailsProducts>
   void dispose() {
     // Dispose of the AnimationController
     controller.dispose();
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final getItFavorite = GetIt.I<FavoriteCubit>();
+    // final getItFavorite = GetIt.I<FavoriteCubit>();
     return Scaffold(
         body: SafeArea(
       child: Container(
@@ -68,7 +70,8 @@ class _ViewDetailsProductsState extends State<ViewDetailsProducts>
             children: [
               GestureDetector(
                 onTap: () {
-                  context.pushNamed(Routes.layoutScreen);
+                  // context.pushNamed(Routes.layoutScreen);
+                  context.pop();
                 },
                 child: Container(
                   height: 40.h,
@@ -142,23 +145,19 @@ class _ViewDetailsProductsState extends State<ViewDetailsProducts>
                             ],
                             color: ColorManager.ghostWhite,
                             borderRadius: BorderRadius.circular(10)),
-                        child: BlocBuilder<FavoriteCubit, FavoriteState>(
-                          bloc: getItFavorite,
-                          builder: (context, state) {
-                            return GestureDetector(
-                              onTap: () {
-                                getItFavorite.addFavorites(widget.allProducts);
-                              },
-                              child: Image.asset(
-                                "assets/images/favorite(1).png",
-                                scale: 19,
-                                color: getItFavorite.addFavorite
-                                        .contains(widget.allProducts.id)
-                                    ? Colors.red
-                                    : Colors.black,
-                              ),
-                            );
+                        child: GestureDetector(
+                          onTap: () {
+                            // getItFavorite
+                            //     .addFavorites(widget.allProducts);
                           },
+                          child: Image.asset(
+                            "assets/images/favorite(1).png",
+                            scale: 19,
+                            // color: getItFavorite.addFavorite
+                            //         .contains(widget.allProducts.id)
+                            //     ? Colors.red
+                            //     : Colors.black,
+                          ),
                         ),
                       )
                     ],
@@ -174,7 +173,7 @@ class _ViewDetailsProductsState extends State<ViewDetailsProducts>
                   descriptionProducte(),
                 ],
               ),
-              const BottomAddToCart()
+              BottomAddToCart(productsData: widget.allProducts)
             ],
           ),
         ),
