@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/helpers/app_assets.dart';
+import 'package:store_app/core/theming/colors.dart';
+import 'package:store_app/core/theming/styles.dart';
 import 'package:store_app/features/home/ui/widget/image_carouselslider.dart';
-
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
 
 class HomeToBar extends StatelessWidget {
   const HomeToBar({
@@ -30,14 +30,14 @@ class HomeToBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Image.asset(
-                "assets/images/search.png",
+                AppAssets.search,
                 color: ColorManager.white,
                 width: 22,
               ),
               Row(
                 children: [
                   Image.asset(
-                    "assets/images/app_logo.png",
+                    AppAssets.appLogo,
                     color: ColorManager.white,
                     width: 49,
                   ),
@@ -51,7 +51,7 @@ class HomeToBar extends StatelessWidget {
                 ],
               ),
               Image.asset(
-                "assets/images/Notification.png",
+                AppAssets.notification,
                 color: ColorManager.white,
                 width: 23,
               )

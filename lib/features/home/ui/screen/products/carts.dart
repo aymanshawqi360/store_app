@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/di/dependency_injection.dart';
-import 'package:store_app/core/networking/api_constants.dart';
-import 'package:store_app/features/cart/constants/constants.dart';
-import 'package:store_app/features/cart/cubit/cart_cubit.dart';
 import 'package:store_app/features/home/data/models/products_response_model.dart';
 
 class Carts extends StatelessWidget {
@@ -16,7 +12,7 @@ class Carts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       right: 0,
-      bottom: 6.0,
+      bottom: 0.0,
       child: Container(
         height: 50,
         width: 45,
@@ -29,7 +25,6 @@ class Carts extends StatelessWidget {
           onTap: () {
             // getIt<CartCubit>().addToCart(productsData);
             //   GetItCubit.getItAddCart.addToCart(productsData);
-            
           },
           child: Image.asset(
             "assets/images/ordering_app_cart.png",

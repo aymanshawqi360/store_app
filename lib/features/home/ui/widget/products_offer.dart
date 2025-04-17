@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:store_app/core/helpers/app_assets.dart';
 import 'package:store_app/core/helpers/spacing.dart';
-import '../../../../core/helpers/images_list.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
+import 'package:store_app/core/theming/colors.dart';
+import 'package:store_app/core/theming/styles.dart';
 
 class ProductsOffer extends StatelessWidget {
   final int index;
@@ -30,7 +30,7 @@ class ProductsOffer extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              "${ImagesList.productsOfferList[index].toString()}",
+              ImagesList.productsOfferList[index].toString(),
               scale: 0.1,
             ),
             horizontalSpace(10),
@@ -57,8 +57,8 @@ class ProductsOffer extends StatelessWidget {
                         style: TextStyles.font13DarkPurpleMedium,
                       ),
                       SvgPicture.asset(
-                        // width: 100,
-                        "assets/svgs/chm.svg", height: 13,
+                        "assets/svgs/chm.svg",
+                        height: 13,
                       )
                     ],
                   )),

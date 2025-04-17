@@ -26,3 +26,8 @@ class GetFavorite extends FavoriteState {
       required this.mensClothingsList,
       required this.womensClothingList});
 }
+
+
+class SaveFavorite extends FavoriteState{
+  
+}

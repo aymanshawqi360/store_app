@@ -16,11 +16,11 @@ class HiveService {
   ) async {
     // final boxAdd = await Hive.box<LengthAllCategories>("length");
 
-    if (!hivee!.containsKey(lengthAllCategories)) {
-      await hivee!.put(lengthAllCategories, lengthAllCategories);
-      //  boxAdd.put(lengthAllCategories, lengthAllCategories);
-      print('add========${hivee!.keys} add=======${hivee!.values}');
-    }
+    // if (!hivee!.containsKey(lengthAllCategories)) {
+    //   await hivee!.put(lengthAllCategories, lengthAllCategories);
+    //   //  boxAdd.put(lengthAllCategories, lengthAllCategories);
+    //   print('add========${hivee!.keys} add=======${hivee!.values}');
+    // }
   }
   // static String getLength() {
   //   final getLength = Hive.box<LengthAllCategories>("length").values.toString();

@@ -23,4 +23,4 @@ class ApiErrors {
   static const String ok = "Ok";
 }
 
-final cartCubit = getIt<CartCubit>();
+// final cartCubit = getIt<CartCubit>();
