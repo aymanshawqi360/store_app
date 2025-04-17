@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/di/dependency_injection.dart';
+import 'package:store_app/core/helpers/app_assets.dart';
 import 'package:store_app/core/theming/colors.dart';
 import 'package:store_app/core/theming/styles.dart';
 import 'package:store_app/features/cart/cart_screen.dart';
 import 'package:store_app/features/categories/categories_screen.dart';
 import 'package:store_app/features/favorites/ui/favorites_screen.dart';
-import 'package:store_app/features/home/logic/cubit_layout_navigation/cubit/layout_screen_cubit.dart';
-import 'package:store_app/features/home/ui/screen/home_screen_design.dart';
+import 'package:store_app/features/home/logic/cubit/categories_cubit.dart';
+import 'package:store_app/features/home/logic/cubit_categories/cubit/products_cubit.dart';
+import 'package:store_app/features/home/ui/home_screen_design.dart';
 
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({
@@ -22,22 +24,20 @@ class LayoutScreen extends StatefulWidget {
 class _LayoutScreenState extends State<LayoutScreen> {
   int navigation = 0;
   List<Widget> layoutScreen = [
-    const HomeScreenDesign(),
+    MultiBlocProvider(providers: [
+      BlocProvider(
+        create: (context) => CategoriesCubit(getIt()),
+      ),
+      BlocProvider(
+        create: (context) => ProductsCubit(getIt()),
+      ),
+    ], child: const HomeScreenDesign()),
     const CategoriesScreen(),
     const FavoritesScreen(),
-    CartScreen(),
+    const CartScreen(),
   ];
   @override
   Widget build(BuildContext context) {
-    // BlocProvider(
-    //   create: (context) => LayoutScreenCubit(),
-    //   child: BlocBuilder<LayoutScreenCubit, LayoutScreenState>(
-    //     builder: (context, state) {
-    //       final cubit = context.read<LayoutScreenCubit>();
-
-    //     },
-    //   ),
-    // );
     return Scaffold(
         bottomNavigationBar: Stack(
           children: [
@@ -53,8 +53,8 @@ class _LayoutScreenState extends State<LayoutScreen> {
                     Padding(
                       padding: EdgeInsets.only(top: 1.h),
                       child: _buildNavItem(
-                          iconOne: "assets/images/home (1).png",
-                          iconTwo: "assets/images/home (2).png",
+                          iconOne: "assets/images/home_one.png",
+                          iconTwo: "assets/images/home_two.png",
                           index: 0,
                           label: "Home",
                           height: 24.0,
@@ -63,23 +63,23 @@ class _LayoutScreenState extends State<LayoutScreen> {
                     Padding(
                       padding: EdgeInsets.only(top: 1.h),
                       child: _buildNavItem(
-                          iconOne: "assets/images/category(1).png",
-                          iconTwo: "assets/images/category(2).png",
+                          iconOne: AppAssets.categoryOne,
+                          iconTwo: AppAssets.categoryTwo,
                           index: 1,
                           label: "Caregories",
                           height: 24.0,
                           context),
                     ),
                     _buildNavItem(
-                        iconOne: "assets/images/favorite(1).png",
-                        iconTwo: "assets/images/favorite(2).png",
+                        iconOne: AppAssets.favoriteOne,
+                        iconTwo: AppAssets.favoriteOne,
                         index: 2,
                         label: "Favorite",
                         height: 25.8,
                         context),
                     _buildNavItem(
-                        iconOne: "assets/images/cart(1).png",
-                        iconTwo: "assets/images/cart(2).png",
+                        iconOne: AppAssets.cartOne,
+                        iconTwo: AppAssets.cartTwo,
                         index: 3,
                         label: "Cart",
                         height: 25.8,
@@ -91,7 +91,6 @@ class _LayoutScreenState extends State<LayoutScreen> {
           ],
         ),
         body: layoutScreen[navigation]);
-    // body: cubit.layoutScreen[cubit.bottomNavigationBarCurrentIndex]);
   }
 
   Widget _buildNavItem(
@@ -104,7 +103,6 @@ class _LayoutScreenState extends State<LayoutScreen> {
   }) {
     return GestureDetector(
       onTap: () {
-        //context.read<LayoutScreenCubit>().getCurrentIndex(index);
         setState(() {
           navigation = index;
         });
@@ -114,9 +112,6 @@ class _LayoutScreenState extends State<LayoutScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           index == navigation
-              // context
-              //     .read<LayoutScreenCubit>()
-              //     .bottomNavigationBarCurrentIndex
               ? Image.asset(iconOne,
                   height: height, color: ColorManager.royalBlue)
               : Image.asset(

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:store_app/features/home/data/models/products_response_model.dart';
@@ -12,11 +13,15 @@ class CartCubit extends Cubit<CartState> {
   Map<ProductsData, int> cart = {};
   List<ProductsData> cartProductes = [];
   List<int> producteCounter = [];
-  // int counter = 1;
+
+  Set dddd = {};
   void addToCart(ProductsData productsData) {
-    if (!cart.containsKey(productsData)) {
+    log(dddd.toString());
+    if (!dddd.contains(productsData.id)) {
+      dddd.add(productsData.id);
+      log(dddd.toString());
+
       cart[productsData] = 1;
-      // cartProductes = cart.keys.map((toElement) => toElement).toList();
 
       print("key ===${cart[productsData]} || value ===${cart.values} ");
       print(cart);
@@ -24,21 +29,21 @@ class CartCubit extends Cubit<CartState> {
     emit(ProductsCart(cart: cart));
   }
 
-  // void increment(ProductsData productsData) {
-  //   if (cart.containsKey(productsData)) {
-  //     cart[productsData] = cart[productsData]! + 1;
-  //     producteCounter = cart.values.map((to) => to).toList();
-  //     print(producteCounter);
-  //   }
-  //   emit(ProductsCart());
-  // }
+  void increment(ProductsData productsData) {
+    if (cart.containsKey(productsData)) {
+      cart[productsData] = cart[productsData]! + 1;
+      producteCounter = cart.values.map((to) => to).toList();
+      print(producteCounter);
+    }
+    emit(ProductsCart(cart: cart));
+  }
 
-  // void decrement(ProductsData productsData) {
-  //   if (cart.containsKey(productsData) && cart[productsData]! > 0) {
-  //     cart[productsData] = cart[productsData]! - 1;
-  //     producteCounter = cart.values.map((to) => to).toList();
-  //     print(producteCounter);
-  //   }
-  //   emit(ProductsCart());
-  // }
+  void decrement(ProductsData productsData) {
+    if (cart.containsKey(productsData) && cart[productsData]! > 0) {
+      cart[productsData] = cart[productsData]! - 1;
+      producteCounter = cart.values.map((to) => to).toList();
+      print(producteCounter);
+    }
+    emit(ProductsCart(cart: cart));
+  }
 }
